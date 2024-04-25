@@ -63,7 +63,7 @@ variable "module_existing_version_number" {
 
 variable "module_name" {
   description = "The name of the module you configured to be created"
-  default = 'animals'
+  default = "animals"
 }
 
 variable "module_provider" {
