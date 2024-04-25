@@ -1,14 +1,17 @@
 variable "base_vcs_type" {
   description = "Should be one of github, github_enterprise, gitlab, gitlab_enterprise"
+  default     = "github"
 }
 
 variable "base_vcs_token" {
   description = "Token for your VCS. Permission scope: https://docs.scalr.io/docs/provider_resource_scalr_vcs_provider#required"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "scalr_url" {
   description = "Scalr URL you create your resources in. WITHOUT the /v2/ part. Example: https://scalr-iacp.scalr.io"
+  default     = "https://alfiia-8-108-6-for-migration.on-prem.scalr.dev"
+
 }
 
 variable "opa_version" {
@@ -18,26 +21,34 @@ variable "opa_version" {
 
 variable "policy_vcs-repo_identifier" {
   description = "'vcs_repo.indentifier' used to create policy group."
+  default     = "Heshercat/tf-happykoala-plan"
 }
 
 variable "policy_vcs-repo_path" {
   description = "'vcs_repo.path' used to create policy group. If your policy is located in the root folder, submit blank string (will default to repo root)."
+  default     = "policies"
 }
 
 variable "policy_vcs-repo_branch" {
   description = "'vcs_repo.branch' used to create policy group."
+  default     = "master"
 }
 
 variable "ep_url" {
   description = "Endpoint URL used to create Scalr endpoint."
+  default     = "https://alfiia-8-108-6-for-migration.on-prem.scalr.dev/api/iacp/v3/"
 }
 
 variable "module_vcs-repo_identifier" {
   description = "'vcs_repo.indentifier' used to create a module. Example: user/repo-name"
+  default     = "Heshercat/tf-happykoala-plan"
+
 }
 
 variable "module_vcs-repo_path" {
   description = "'vcs_repo.path' used to create a module. If your module is located in the root folder, submitting blank string MIGHT work. Example: modules/terraform-null-module"
+  default     = "tf-magic-animals"
+
 }
 
 variable "module_vcs-repo_tag-prefix" {
@@ -46,10 +57,13 @@ variable "module_vcs-repo_tag-prefix" {
 
 variable "module_existing_version_number" {
   description = "Specify the semversion of the module that will be created. I.e. 0.0.2"
+  default     = "9.1.0"
+
 }
 
 variable "module_name" {
   description = "The name of the module you configured to be created"
+  default = 'animals'
 }
 
 variable "module_provider" {
@@ -63,12 +77,17 @@ variable "pcfg_gcp_credentials" {
 
 variable "ws-vcs_vcs-repo_identifier" {
   description = "'vcs_repo.indentifier' used to create a workspace."
+  default     = "Heshercat/tf-happykoala-plan"
 }
 
 variable "ws-vcs_vcs-repo_branch" {
   description = "'vcs_repo.branch' used to create a workspace."
+  default     = "master"
+
 }
 
 variable "ws-vcs_workdir" {
   description = "Working directory (path) used to create workspace. Submit blank if configuration is located in the repository root."
+  default     = "tf-magic-animals"
+
 }
