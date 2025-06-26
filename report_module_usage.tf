@@ -2,10 +2,17 @@
 # All modules share the same VCS source but are created at the environment level.
 # You can get rid of the null_resource.wait_for_module, but note that you'll get a fail during first apply and will have to trigger apply again after a few minutes (so all the modules are loaded)
 
+resource "random_id" "suffix" {
+  byte_length = 2
+}
+
+locals {
+  suffix = random_id.suffix.hex
+}
 
 resource "scalr_environment" "report_env" {
   count = 21
-  name  = "alfi-REPORTS_env_namespace_${count.index}"
+  name  = "alfi-REPORTS_env_namespace_${count.index}_${local.suffix}"
 }
 
 resource "scalr_module" "report_module" {
