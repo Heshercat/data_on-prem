@@ -1,5 +1,5 @@
 resource "scalr_policy_group" "policy" {
-  name            = "auto_policy_${formatdate("DDMMYYYY", timestamp())}"
+  name            = "alfi-auto_policy_${formatdate("DDMMYYYY", timestamp())}"
   opa_version     = var.opa_version
   vcs_provider_id = scalr_vcs_provider.vcs.id
   vcs_repo {
