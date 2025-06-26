@@ -1,5 +1,5 @@
 resource "scalr_agent_pool" "runs_agent_pool" {
-  name = "agent_pool_${formatdate("DDMMYYYY", timestamp())}"
+  name = "alfi-agent_pool_${formatdate("DDMMYYYY", timestamp())}"
 }
 
 resource "scalr_agent_pool_token" "ap-token" {
