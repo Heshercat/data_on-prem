@@ -1,5 +1,5 @@
 resource "scalr_workspace" "ws_vcs" {
-  name            = "workspace_VCS_${formatdate("DDMMYYYY", timestamp())}"
+  name            = "alfiworkspace_VCS_${formatdate("DDMMYYYY", timestamp())}"
   environment_id  = scalr_environment.env_no_tag.id
   vcs_provider_id = scalr_vcs_provider.vcs.id
 
@@ -14,7 +14,7 @@ resource "scalr_workspace" "ws_vcs" {
 }
 
 resource "scalr_workspace" "ws_cli" {
-  name           = "workspace_CLI_${formatdate("DDMMYYYY", timestamp())}"
+  name           = "alfi-workspace_CLI_${formatdate("DDMMYYYY", timestamp())}"
   environment_id = scalr_environment.env_no_tag.id
   agent_pool_id  = scalr_agent_pool.runs_agent_pool.id
 }
