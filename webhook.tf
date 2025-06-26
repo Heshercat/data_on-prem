@@ -1,5 +1,5 @@
 resource "scalr_webhook" "webhook" {
-  name         = "auto_webhook_${formatdate("DDMMYYYY", timestamp())}"
+  name         = "alfi-auto_webhook_${formatdate("DDMMYYYY", timestamp())}"
   enabled      = true
   url          = var.ep_url
   secret_key   = "A3a44119946b537bcd94ec64b14e4e3196bcf6867"
